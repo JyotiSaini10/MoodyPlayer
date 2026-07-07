@@ -9,7 +9,7 @@ const songmodel= require("../models/song.model");
 const upload = multer({storage:multer.memoryStorage()});
 
 
-router.post('/songs',upload.single("audio"), async(req,res)=>{
+router.post('/',upload.single("audio"), async(req,res)=>{
 
     console.log(req.body);
     console.log(req.file);
@@ -31,7 +31,7 @@ router.post('/songs',upload.single("audio"), async(req,res)=>{
 });
 
 
-router.get('/songs', async (req, res)=>{
+router.get('/', async (req, res)=>{
     const {mood}= req.query;
 
     const songs= await songmodel.find({

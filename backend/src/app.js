@@ -7,6 +7,6 @@ app.use(cors());
 
 app.use(express.json());//Use when we give raw data
 
-app.use('/', songRoutes);
+app.use('/songs', songRoutes);
 
-module.exports= app;2
+module.exports= app;
